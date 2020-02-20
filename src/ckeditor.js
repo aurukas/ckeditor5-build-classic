@@ -11,7 +11,7 @@ import Autoformat from '@ckeditor/ckeditor5-autoformat/src/autoformat';
 import Bold from '@ckeditor/ckeditor5-basic-styles/src/bold';
 import Italic from '@ckeditor/ckeditor5-basic-styles/src/italic';
 import BlockQuote from '@ckeditor/ckeditor5-block-quote/src/blockquote';
-import RazzbyMedia from '@ckeditor/ckeditor5-razzby-media/src/razzbymedia';
+import RazzbyMedia from './razzbymedia';
 import CKFinder from '@ckeditor/ckeditor5-ckfinder/src/ckfinder';
 import EasyImage from '@ckeditor/ckeditor5-easy-image/src/easyimage';
 import Heading from '@ckeditor/ckeditor5-heading/src/heading';
@@ -75,14 +75,14 @@ ClassicEditor.defaultConfig = {
 			'link',
 			'alignment',
 			'bulletedList',
-			'razzbyMedia',
+			'RazzbyMedia',
 			'blockQuote',
 			'insertTable'
 		]
 	},
 	image: {
-		toolbar: [ 'imageTextAlternative', '|', 'imageStyle:alignLeft', 'imageStyle:alignRight' ],
-		styles: [ 'alignLeft', 'alignRight' ]
+		toolbar: [ 'imageTextAlternative', '|', 'imageStyle:full', 'imageStyle:alignLeft', 'imageStyle:alignCenter', 'imageStyle:alignRight' ],
+		styles: [ 'full', 'alignCenter', 'alignLeft', 'alignRight' ]
 	},
 	table: {
 		contentToolbar: [
