@@ -4,16 +4,17 @@
  */
 
 // The editor creator to use.
+// import SimpleUploadAdapter from '@ckeditor/ckeditor5-upload/src/adapters/simpleuploadadapter';
 import ClassicEditorBase from '@ckeditor/ckeditor5-editor-classic/src/classiceditor';
 import Essentials from '@ckeditor/ckeditor5-essentials/src/essentials';
-import UploadAdapter from '@ckeditor/ckeditor5-adapter-ckfinder/src/uploadadapter';
 import Autoformat from '@ckeditor/ckeditor5-autoformat/src/autoformat';
 import Bold from '@ckeditor/ckeditor5-basic-styles/src/bold';
 import Italic from '@ckeditor/ckeditor5-basic-styles/src/italic';
 import BlockQuote from '@ckeditor/ckeditor5-block-quote/src/blockquote';
-import RazzbyMedia from './razzbymedia';
-import CKFinder from '@ckeditor/ckeditor5-ckfinder/src/ckfinder';
-import EasyImage from '@ckeditor/ckeditor5-easy-image/src/easyimage';
+// import RazzbyMedia from './razzbymedia';
+import MyCustomUploadAdapterPlugin from './MyUploadAdapter';
+// import CKFinder from '@ckeditor/ckeditor5-ckfinder/src/ckfinder';
+// import EasyImage from '@ckeditor/ckeditor5-easy-image/src/easyimage';
 import Heading from '@ckeditor/ckeditor5-heading/src/heading';
 import Image from '@ckeditor/ckeditor5-image/src/image';
 import ImageCaption from '@ckeditor/ckeditor5-image/src/imagecaption';
@@ -39,13 +40,14 @@ ClassicEditor.builtinPlugins = [
 	Essentials,
 	Alignment,
 	Highlight,
-	UploadAdapter,
 	Autoformat,
 	Bold,
 	Italic,
 	BlockQuote,
-	CKFinder,
-	EasyImage,
+	// CKFinder,
+	// EasyImage,
+	// SimpleUploadAdapter,
+	MyCustomUploadAdapterPlugin,
 	Heading,
 	Image,
 	ImageCaption,
@@ -60,7 +62,7 @@ ClassicEditor.builtinPlugins = [
 	PasteFromOffice,
 	Table,
 	TableToolbar,
-	RazzbyMedia,
+	// RazzbyMedia,
 	ImageResize
 ];
 
@@ -75,14 +77,15 @@ ClassicEditor.defaultConfig = {
 			'link',
 			'alignment',
 			'bulletedList',
-			'RazzbyMedia',
+			'imageUpload',
+			// 'RazzbyMedia',
 			'blockQuote',
 			'insertTable'
 		]
 	},
 	image: {
 		toolbar: [ 'imageTextAlternative', '|', 'imageStyle:full', 'imageStyle:alignLeft', 'imageStyle:alignCenter', 'imageStyle:alignRight' ],
-		styles: [ 'full', 'alignCenter', 'alignLeft', 'alignRight' ]
+		styles: [ 'full', 'alignCenter', 'alignLeft', 'alignRight' ],
 	},
 	table: {
 		contentToolbar: [
